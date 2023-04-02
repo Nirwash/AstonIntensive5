@@ -41,7 +41,7 @@ public class ContactsFragment extends Fragment {
                     public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
                         Contact contact = result.getParcelable(CONTACT);
                         updateContacts(contact);
-                        updateUi(contact);
+                        setupUi();
                     }
                 });
         return binding.getRoot();
@@ -130,28 +130,6 @@ public class ContactsFragment extends Fragment {
         binding.tvNameContact4.setText(contact4.name);
         binding.tvLastnameContact4.setText(contact4.lastname);
         binding.tvTelContact4.setText(contact4.telNumber);
-    }
-
-    private void updateUi(Contact contact) {
-        if (contact.id == 0) {
-            binding.tvNameContact1.setText(contact.name);
-            binding.tvLastnameContact1.setText(contact1.lastname);
-            binding.tvTelContact1.setText(contact1.telNumber);
-        } else if (contact.id == 1) {
-            binding.tvNameContact2.setText(contact2.name);
-            binding.tvLastnameContact2.setText(contact2.lastname);
-            binding.tvTelContact2.setText(contact2.telNumber);
-        } else if (contact.id == 2) {
-            binding.tvNameContact3.setText(contact3.name);
-            binding.tvLastnameContact3.setText(contact3.lastname);
-            binding.tvTelContact3.setText(contact3.telNumber);
-        } else if (contact.id == 3) {
-            binding.tvNameContact4.setText(contact4.name);
-            binding.tvLastnameContact4.setText(contact4.lastname);
-            binding.tvTelContact4.setText(contact4.telNumber);
-        } else {
-            throw new IllegalStateException("Unexpected value: " + contact.id);
-        }
     }
 }
 
