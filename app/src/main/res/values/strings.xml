@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">AstonIntensive5</string>
+    <string name="contact_name_1">Иван</string>
+    <string name="contact_lastname_1">Иванов</string>
+    <string name="contact_tel_1">89456258794</string>
+    <string name="contact_name_2">Екатерина</string>
+    <string name="contact_lastname_2">Самойлова</string>
+    <string name="contact_tel_2">32569879461</string>
+    <string name="contact_name_3">Павел</string>
+    <string name="contact_lastname_3">Жмыхов</string>
+    <string name="contact_tel_3">12257894526</string>
+    <string name="contact_name_4">Алиса</string>
+    <string name="contact_lastname_4">Канова</string>
+    <string name="contact_tel_4">70654568975</string>
+    <string name="info_about_contact">Info about contact..</string>
+    <string name="name">Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="telephone_number">Telephone number</string>
+
+</resources>
