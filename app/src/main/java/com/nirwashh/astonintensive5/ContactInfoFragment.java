@@ -59,7 +59,6 @@ public class ContactInfoFragment extends Fragment {
     }
 
 
-
     private void closeFragment() {
         requireActivity().getSupportFragmentManager().popBackStack();
     }

@@ -1,7 +1,6 @@
 package com.nirwashh.astonintensive5;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,13 +26,7 @@ public class ContactsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         contactsFragmentNavigation = (ContactsFragmentNavigation) requireActivity();
-        if (savedInstanceState == null) {
-            initContacts();
-        } else {
-            Log.d("saveInstanceState", savedInstanceState.toString());
-            updateContacts(savedInstanceState.getParcelable("contact1"));
-        }
-
+        initContacts();
     }
 
     @Override
@@ -70,13 +63,6 @@ public class ContactsFragment extends Fragment {
         binding.contact4.setOnClickListener(view1 -> {
             contactsFragmentNavigation.navigateToContactInfoFragment(contact4);
         });
-    }
-
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        Log.d("saveInstanceState", contact1.toString());
-        outState.putParcelable("contact1", contact1);
     }
 
     private void initContacts() {
