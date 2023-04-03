@@ -13,10 +13,12 @@ public class MainActivity extends FragmentActivity implements ContactsFragmentNa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         isTablet = getResources().getBoolean(R.bool.is_tablet);
-        Fragment fragment = new ContactsFragment();
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container, fragment, ContactsFragment.TAG)
-                .commit();
+        if (savedInstanceState == null) {
+            Fragment fragment = new ContactsFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fragment_container, fragment, ContactsFragment.TAG)
+                    .commit();
+        }
     }
 
     @Override

@@ -1,7 +1,6 @@
 package com.nirwashh.astonintensive5;
 
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,8 +50,11 @@ public class ContactInfoFragment extends Fragment {
             String name = String.valueOf(binding.tvNameContact.getText());
             String lastname = String.valueOf(binding.tvLastnameContact.getText());
             String telNumber = String.valueOf(binding.tvTelContact.getText());
+            contact.setName(name);
+            contact.setLastname(lastname);
+            contact.setTelNumber(telNumber);
             Bundle result = new Bundle();
-            result.putParcelable(CONTACT, (Parcelable) new Contact(name, lastname, telNumber, contact.id));
+            result.putParcelable(CONTACT, contact);
             getParentFragmentManager().setFragmentResult("requestKey", result);
             closeFragment();
         });
@@ -64,9 +66,9 @@ public class ContactInfoFragment extends Fragment {
     }
 
     private void setupUi(Contact contact) {
-        binding.tvNameContact.setText(contact.name);
-        binding.tvLastnameContact.setText(contact.lastname);
-        binding.tvTelContact.setText(contact.telNumber);
+        binding.tvNameContact.setText(contact.getName());
+        binding.tvLastnameContact.setText(contact.getLastname());
+        binding.tvTelContact.setText(contact.getTelNumber());
 
     }
 }

@@ -29,6 +29,13 @@ public class ContactsFragment extends Fragment {
         initContacts();
     }
 
+    private void initContacts() {
+        contact1 = MyApp.contact1;
+        contact2 = MyApp.contact2;
+        contact3 = MyApp.contact3;
+        contact4 = MyApp.contact4;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -65,71 +72,45 @@ public class ContactsFragment extends Fragment {
         });
     }
 
-    private void initContacts() {
-        contact1 = new Contact(
-                getString(R.string.contact_name_1),
-                getString(R.string.contact_lastname_1),
-                getString(R.string.contact_tel_1),
-                0
-        );
-        contact2 = new Contact(
-                getString(R.string.contact_name_2),
-                getString(R.string.contact_lastname_2),
-                getString(R.string.contact_tel_2),
-                1
-        );
-        contact3 = new Contact(
-                getString(R.string.contact_name_3),
-                getString(R.string.contact_lastname_3),
-                getString(R.string.contact_tel_3),
-                2
-        );
-        contact4 = new Contact(
-                getString(R.string.contact_name_4),
-                getString(R.string.contact_lastname_4),
-                getString(R.string.contact_tel_4),
-                3
-        );
-    }
 
     private void updateContacts(Contact contact) {
-        if (contact.id == 0) {
-            contact1.name = contact.name;
-            contact1.lastname = contact.lastname;
-            contact1.telNumber = contact.telNumber;
-        } else if (contact.id == 1) {
-            contact2.name = contact.name;
-            contact2.lastname = contact.lastname;
-            contact2.telNumber = contact.telNumber;
-        } else if (contact.id == 2) {
-            contact3.name = contact.name;
-            contact3.lastname = contact.lastname;
-            contact3.telNumber = contact.telNumber;
-        } else if (contact.id == 3) {
-            contact4.name = contact.name;
-            contact4.lastname = contact.lastname;
-            contact4.telNumber = contact.telNumber;
+        if (contact.getId() == 1) {
+            contact1.setName(contact.getName());
+            contact1.setLastname(contact.getLastname());
+            contact1.setTelNumber(contact.getTelNumber());
+        } else if (contact.getId() == 2) {
+            contact2.setName(contact.getName());
+            contact2.setLastname(contact.getLastname());
+            contact2.setTelNumber(contact.getTelNumber());
+        } else if (contact.getId() == 3) {
+            contact3.setName(contact.getName());
+            contact3.setLastname(contact.getLastname());
+            contact3.setTelNumber(contact.getTelNumber());
+        } else if (contact.getId() == 4) {
+            contact4.setName(contact.getName());
+            contact4.setLastname(contact.getLastname());
+            contact4.setTelNumber(contact.getTelNumber());
         } else {
-            throw new IllegalStateException("Unexpected value: " + contact.id);
+            throw new IllegalStateException("Unexpected value: " + contact.getId());
         }
     }
 
     private void setupUi() {
-        binding.tvNameContact1.setText(contact1.name);
-        binding.tvLastnameContact1.setText(contact1.lastname);
-        binding.tvTelContact1.setText(contact1.telNumber);
+        binding.tvNameContact1.setText(contact1.getName());
+        binding.tvLastnameContact1.setText(contact1.getLastname());
+        binding.tvTelContact1.setText(contact1.getTelNumber());
 
-        binding.tvNameContact2.setText(contact2.name);
-        binding.tvLastnameContact2.setText(contact2.lastname);
-        binding.tvTelContact2.setText(contact2.telNumber);
+        binding.tvNameContact2.setText(contact2.getName());
+        binding.tvLastnameContact2.setText(contact2.getLastname());
+        binding.tvTelContact2.setText(contact2.getTelNumber());
 
-        binding.tvNameContact3.setText(contact3.name);
-        binding.tvLastnameContact3.setText(contact3.lastname);
-        binding.tvTelContact3.setText(contact3.telNumber);
+        binding.tvNameContact3.setText(contact3.getName());
+        binding.tvLastnameContact3.setText(contact3.getLastname());
+        binding.tvTelContact3.setText(contact3.getTelNumber());
 
-        binding.tvNameContact4.setText(contact4.name);
-        binding.tvLastnameContact4.setText(contact4.lastname);
-        binding.tvTelContact4.setText(contact4.telNumber);
+        binding.tvNameContact4.setText(contact4.getName());
+        binding.tvLastnameContact4.setText(contact4.getLastname());
+        binding.tvTelContact4.setText(contact4.getTelNumber());
     }
 }
 
