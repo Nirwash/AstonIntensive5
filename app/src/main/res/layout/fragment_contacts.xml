@@ -1,196 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    tools:context=".ContactsFragment">
+    tools:context=".MainActivity">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="16dp"/>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/contact_1"
-        android:layout_width="match_parent"
+    <SearchView
+        android:id="@+id/search_view"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:elevation="4dp"
-        app:cardCornerRadius="16dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tv_name_contact1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="Name"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginStart="16dp"/>
-                <TextView
-                    android:id="@+id/tv_lastname_contact1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="Last Name"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginStart="8dp"/>
-            </LinearLayout>
-            <TextView
-                android:id="@+id/tv_tel_contact1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="878347985739"
-                android:layout_marginStart="24dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/contact_2"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:elevation="4dp"
-        app:cardCornerRadius="16dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tv_name_contact2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="Name"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginStart="16dp"/>
-                <TextView
-                    android:id="@+id/tv_lastname_contact2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="Last Name"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginStart="8dp"/>
-            </LinearLayout>
-            <TextView
-                android:id="@+id/tv_tel_contact2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="878347985739"
-                android:layout_marginStart="24dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/contact_3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:elevation="4dp"
-        app:cardCornerRadius="16dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tv_name_contact3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="Name"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginStart="16dp"/>
-                <TextView
-                    android:id="@+id/tv_lastname_contact3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="Last Name"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginStart="8dp"/>
-            </LinearLayout>
-            <TextView
-                android:id="@+id/tv_tel_contact3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="878347985739"
-                android:layout_marginStart="24dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/contact_4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:elevation="4dp"
-        app:cardCornerRadius="16dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/tv_name_contact4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="Name"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginStart="16dp"/>
-                <TextView
-                    android:id="@+id/tv_lastname_contact4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="Last Name"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginStart="8dp"/>
-            </LinearLayout>
-            <TextView
-                android:id="@+id/tv_tel_contact4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="878347985739"
-                android:layout_marginStart="24dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="8dp"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+        android:layout_height="match_parent"
+        android:layout_marginTop="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_view" />
 
 
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

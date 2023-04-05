@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+import com.nirwashh.astonintensive5.model.Contact;
+
 public class MainActivity extends FragmentActivity implements ContactsFragmentNavigation {
     private boolean isTablet;
 

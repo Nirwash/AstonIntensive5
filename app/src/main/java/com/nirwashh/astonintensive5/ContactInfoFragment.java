@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.nirwashh.astonintensive5.databinding.FragmentContactInfoBinding;
+import com.nirwashh.astonintensive5.model.Contact;
 
 public class ContactInfoFragment extends Fragment {
     public static String TAG = "ContactInfoFragment";
@@ -35,7 +36,7 @@ public class ContactInfoFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentContactInfoBinding.inflate(inflater, container, false);
         return binding.getRoot();
@@ -51,7 +52,7 @@ public class ContactInfoFragment extends Fragment {
             String lastname = String.valueOf(binding.tvLastnameContact.getText());
             String telNumber = String.valueOf(binding.tvTelContact.getText());
             contact.setName(name);
-            contact.setLastname(lastname);
+            contact.setLastName(lastname);
             contact.setTelNumber(telNumber);
             Bundle result = new Bundle();
             result.putParcelable(CONTACT, contact);
@@ -67,7 +68,7 @@ public class ContactInfoFragment extends Fragment {
 
     private void setupUi(Contact contact) {
         binding.tvNameContact.setText(contact.getName());
-        binding.tvLastnameContact.setText(contact.getLastname());
+        binding.tvLastnameContact.setText(contact.getLastName());
         binding.tvTelContact.setText(contact.getTelNumber());
 
     }
